@@ -1,0 +1,69 @@
+query {
+  shop {
+    name
+    description
+    primaryDomain {
+      host
+      url
+    }
+    products(first: 10) {
+      edges {
+        node {
+          id
+          title
+          handle
+          availableForSale
+          priceRange {
+            maxVariantPrice {
+              amount
+              currencyCode
+            }
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
+          options {
+            name
+            values
+          }
+          images(first: 1) {
+            edges {
+              node {
+                id
+                altText
+                transformedSrc(maxWidth: 500, maxHeight: 500)
+                height
+                width
+              }
+            }
+          }
+          variants(first: 20) {
+            edges {
+              node {
+                id
+                title
+                availableForSale
+                currentlyNotInStock
+                priceV2 {
+                  amount
+                  currencyCode
+                }
+                image {
+                  id
+                  originalSrc
+                  height
+                  width
+                }
+                selectedOptions {
+                  name
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
