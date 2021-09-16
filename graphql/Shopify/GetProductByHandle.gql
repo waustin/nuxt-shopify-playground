@@ -1,22 +1,49 @@
-query($handle: String!) {
+query ($handle: String!) {
   productByHandle(handle: $handle) {
     title
     id
     handle
-    images(first: 10) {
-        edges {
-            node {
-                originalSrc
-                transformedSrc(maxHeight: 200, maxWidth: 200)
-                altText
-                id
-            }
-        }
-    }
-    variants(first: 1) {
+    description
+    descriptionHtml
+    availableForSale
+    createdAt
+    metafields(first: 10) {
       edges {
         node {
           id
+          key
+          namespace
+          value
+        }
+      }
+    }
+    images(first: 10) {
+      edges {
+        node {
+          originalSrc
+          transformedSrc(maxHeight: 200, maxWidth: 200)
+          altText
+          id
+        }
+      }
+    }
+    options(first: 10) {
+        id
+        name
+        values
+    }
+    variants(first: 10) {
+      edges {
+        node {
+          id
+          title
+          sku
+          #image
+          availableForSale
+          priceV2 {
+            amount
+            currencyCode
+          }
         }
       }
     }
