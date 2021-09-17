@@ -19,10 +19,23 @@
         </div>
      </div>
      <div class="column info-col">
-       <h2 class="is-size-2 mb-2">{{ product.title }}</h2>
-       <p class="description mb-2">
+      <h2 class="is-size-2 mb-2">{{ product.title }}</h2>
+      <p class="description mb-2">
             {{product.description}}
-        </p>
+      </p>
+      <div class="options">
+        <div v-for="option in product.options" :key="option.id" class="field">
+          <label class="label">{{ option.name }}</label>
+           <div class="control">
+            <div class="select">
+              <option v-for="value in option.values" :key="`${option.name}-${value}`">
+                {{value}}
+              </option>
+            </div>
+           </div>
+        </div>
+      </div>
+
      </div>
 
     </div>
@@ -43,6 +56,11 @@ export default {
       selectedImage: null,
       selectedVariant: null,
     };
+  },
+  computed: {
+    numVariants() {
+      return this.products.variants.edges.length;
+    }
   },
   watch: {
     product(val) {
