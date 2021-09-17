@@ -40,6 +40,9 @@ $family-serif: 'Merriweather', serif;
             &:hover {
                 cursor: pointer;
             }
+            &.selected {
+                border: 2px solid $grey;
+            }
         }
     }
 

@@ -17,6 +17,7 @@
             v-for="image in product.images.edges"
             :key="image.node.id"
             :src="image.node.transformedSrc"
+            :class="{ selected: image.node.id == selectedImage.id }"
             @click="selectedImage = image.node"
           />
         </div>
