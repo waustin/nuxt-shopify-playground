@@ -8,8 +8,10 @@ $family-serif: 'Merriweather', serif;
 
 .debug {
     font-family: monospace;
-    border: 1px solid $grey-light;
+    border: 1px solid $grey-lighter;
     display: block;
+    padding: 2rem;
+    background-color: $grey-lightest
 }
 
 
@@ -31,7 +33,7 @@ $family-serif: 'Merriweather', serif;
         align-items: flex-start;
         margin: 1rem -10px;
         img {
-            margin: 0 10px;
+            margin: 10px 10px;
             max-width: 120px;
             border: 2px solid $grey-lighter;
             display: block;

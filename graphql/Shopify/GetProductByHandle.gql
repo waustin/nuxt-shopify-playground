@@ -28,9 +28,9 @@ query ($handle: String!) {
       }
     }
     options(first: 10) {
-        id
-        name
-        values
+      id
+      name
+      values
     }
     variants(first: 10) {
       edges {
@@ -38,8 +38,18 @@ query ($handle: String!) {
           id
           title
           sku
-          #image
+          image {
+            id
+            originalSrc
+            altText
+            width
+            height
+          }
           availableForSale
+          selectedOptions {
+            name
+            value
+          }
           priceV2 {
             amount
             currencyCode

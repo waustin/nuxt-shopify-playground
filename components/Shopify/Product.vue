@@ -23,19 +23,23 @@
       <p class="description mb-2">
             {{product.description}}
       </p>
-      <div class="options">
-        <div v-for="option in product.options" :key="option.id" class="field">
+      <div class="field is-grouped options mb-4">
+        <div v-for="option in product.options" :key="option.id" class="control">
           <label class="label">{{ option.name }}</label>
-           <div class="control">
-            <div class="select">
+          <div class="select">
+            <select>
               <option v-for="value in option.values" :key="`${option.name}-${value}`">
                 {{value}}
               </option>
-            </div>
-           </div>
+            </select>
+          </div>
         </div>
       </div>
-
+      <h5 class="is-size-5 price mb-4">${{ selectedVariant.priceV2.amount }}</h5>
+      <div class="debug">
+        <h4 class="is-size-4">Selected Variant</h4>
+        <vue-json-pretty :data="selectedVariant"  :deep="1" />
+      </div>
      </div>
 
     </div>
@@ -43,8 +47,14 @@
 </template>
 
 <script>
+import VueJsonPretty from 'vue-json-pretty';
+import 'vue-json-pretty/lib/styles.css';
+
 export default {
   name: 'Product',
+  components: {
+    VueJsonPretty,
+  },
   props: {
     product: {
       type: Object,
