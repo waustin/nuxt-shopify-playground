@@ -5,10 +5,13 @@
 
      <div class="column is-two-fifths media-col">
        
-        <img :key="selectedImage"
-             :src="selectedImage.originalSrc"
-             class="selected-image mb-4" />
-
+        <transition name="fade" mode="out-in">
+          <img :key="selectedImage.id"
+              :src="selectedImage.originalSrc"
+              :width="selectedImage.width"
+              :height="selectedImage.height"
+              class="selected-image mb-4" />
+        </transition>
         <div class="image-gallery">
           <img
             v-for="image in product.images.edges"
@@ -74,14 +77,14 @@ export default {
   },
   watch: {
     product(val) {
-      console.log('product watch ', val);
+      //console.log('product watch ', val);
     } 
   },
   created() {
     this.selectedImage = this.product.images.edges[0].node;
     this.selectedVariant = this.product.variants.edges[0].node;
-    console.log(this.product.images);
-    console.log(this.selectedImage);
+   // console.log(this.product.images);
+    //console.log(this.selectedImage);
   },
   
 }

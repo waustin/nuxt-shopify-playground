@@ -24,6 +24,8 @@ query ($handle: String!) {
           transformedSrc(maxHeight: 200, maxWidth: 200)
           altText
           id
+          width
+          height
         }
       }
     }
