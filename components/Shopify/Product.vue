@@ -40,6 +40,10 @@
         </div>
       </div>
       <h5 class="is-size-5 price mb-4">${{ selectedVariant.priceV2.amount }}</h5>
+
+      <button type="button" class="button is-primary mb-6"
+        @click="onAddToCartClick">Add Selected Variant to Cart</button>
+
       <div class="debug">
         <h4 class="is-size-4">Selected Variant</h4>
         <vue-json-pretty :data="selectedVariant"  :deep="1" />
@@ -86,6 +90,18 @@ export default {
     this.selectedVariant = this.product.variants.edges[0].node;
    // console.log(this.product.images);
     //console.log(this.selectedImage);
+  },
+  methods: {
+    onOptionChange(event) {
+      console.log('onOptionChange');
+    },
+
+    findVariantImage(images, variantId) {
+      console.log('findVariantImage')
+    },
+    onAddToCartClick() {
+      console.log('onAddtoCartClick');
+    }
   },
   
 }

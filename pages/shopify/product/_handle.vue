@@ -3,8 +3,10 @@
         
         <NuxtLink to="/shopify/products" class="button is-dark mb-4">Back to All Products</NuxtLink>
 
+        <ShopifyCart /> 
+        
         <div v-if="!$apollo.queries.product.loading">
-            <ShopifyProduct :product="product" />    
+            <ShopifyProduct :product="product" />   
 
             <code class="debug">
               <vue-json-pretty :data="product"  :deep="2" />
