@@ -53,7 +53,7 @@ export default {
   apollo: {
     clientConfigs: {
       shopify: {
-        httpEndpoint: 'https://' + process.env.SHOPIFY_STORE_DOMAIN + '/api/2021-07/graphql.json',
+        httpEndpoint: 'https://' + process.env.SHOPIFY_STORE_DOMAIN + '/api/2021-10/graphql.json',
         httpLinkOptions: {
           headers: {
             'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
