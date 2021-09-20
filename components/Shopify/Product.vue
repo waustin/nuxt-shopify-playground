@@ -116,7 +116,9 @@ export default {
     findVariantImage(images, variantId) {
       console.log('findVariantImage')
     },
-    async onAddToCartClick() {
+    onAddToCartClick() {
+      this.$store.dispatch('cart/addToCart', this.selectedVariant.id, 1);
+      /*
       const myCartInput = {
           lines: [
             {
@@ -139,6 +141,7 @@ export default {
        },
       });
       console.log(result);
+      */
     },
   },
 }

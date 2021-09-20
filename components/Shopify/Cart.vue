@@ -2,12 +2,21 @@
   <div class="cart">
       <h3 class="is-size-3 mb-2">Cart</h3>
       <p>Cart Items will go here</p>
+      <p>[{{cart}}]</p>
   </div>
 </template>
 
 <script>
 export default {
-
+    computed: {
+        cart() {
+            return this.$store.state.cart.cart;
+        }
+    },
+    created() {
+    },
+    methods: {},
+    
 }
 </script>
 
