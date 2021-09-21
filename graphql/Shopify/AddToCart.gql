@@ -33,6 +33,11 @@ mutation createCart($cartInput: CartInput) {
                 }
               }
             }
+            attributes {
+              key
+              value
+            }
+            quantity
           }
         }
       }

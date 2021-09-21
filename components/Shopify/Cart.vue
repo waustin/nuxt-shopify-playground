@@ -12,9 +12,15 @@
                     <div class="column  product-info-col">
                         <h4 class="is-size-6 has-text-weight-bold">{{cartLine.node.merchandise.product.title}}</h4>
                         <h5 class="is-size-7">{{cartLine.node.merchandise.title}}</h5>
+                       
+                        <div v-if="cartLine.node.attributes" class="attributes">
+                            <h6 v-for="attribute in cartLine.node.attributes" :key="attribute.key"
+                               class="is-size-7">{{attribute.key}}: {{attribute.value}}</h6>
+                        </div>
                     </div>
                     <div class="column is-4 product-price-col">
                         <h4 class="is-size-5 has-text-weight-bold">${{cartLine.node.merchandise.priceV2.amount}}</h4>
+                        <h5 class="is-size-7">Quantity: {{cartLine.node.quantity}}</h5>
                     </div>
                </div>
                <div v-show="false">
