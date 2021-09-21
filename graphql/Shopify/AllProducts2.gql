@@ -32,7 +32,7 @@ query {
               node {
                 id
                 altText
-                transformedSrc(maxWidth: 500, maxHeight: 500)
+                transformedSrc(maxWidth: 200, maxHeight: 200)
                 height
                 width
               }

@@ -12,6 +12,25 @@ mutation createCart($cartInput: CartInput) {
             merchandise {
               ... on ProductVariant {
                 id
+                title
+                priceV2 {
+                  amount
+                  currencyCode
+                }
+                image {
+                  id
+                  altText
+                  transformedSrc(maxWidth: 500, maxHeight: 500)
+                  height
+                  width
+                }
+                selectedOptions {
+                  name
+                  value
+                }
+                product {
+                  title
+                }
               }
             }
           }

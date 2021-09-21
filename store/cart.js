@@ -18,12 +18,18 @@ export const actions = {
                 {
                     quantity: 1,
                     merchandiseId: variantId,
-                },
+                    attributes: [
+                        {
+                            key: 'line-item-attribute',
+                            value: 'this is the line item attribute'
+                        }
+                    ]
+                }
             ],
-            attributes: {
-                key: 'my_attribute',
-                value: 'this is my attribute',
-            },
+            attributes: [{
+                key: 'cart_attribute',
+                value: 'this is my cart attribute',
+            }],
         };
         const shopifyClient = this.app.apolloProvider.clients.shopify;
         const result = await shopifyClient.mutate({ 
