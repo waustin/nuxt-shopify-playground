@@ -2,7 +2,10 @@
     <div class="product-list-item">
         <NuxtLink :to="'/shopify/product/' + product.handle">
             <div class="thumbnail">
-                <img :src="product.images.edges[0].node.transformedSrc" />
+
+                <img
+                    v-if="product.images.edges.length > 0" 
+                    :src="product.images.edges[0].node.transformedSrc" />
             </div>
             <h4 class="text-lg">{{ product.title }}</h4>
         </NuxtLink>

@@ -7,6 +7,10 @@ query ($handle: String!) {
     descriptionHtml
     availableForSale
     createdAt
+    productSubtitle: metafield(namespace: "descriptors", key: "subtitle") {
+      value
+      type
+    }
     metafields(first: 10) {
       edges {
         node {
